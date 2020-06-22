@@ -1,76 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <title>Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="jumbotron mt-3">
-            <h1 class="display-4">Hello, friends!</h1>
-            <p class="lead">This is a test application using vanila javascript.</p>
-            <hr class="my-4">
-        </div>
-        <div class="popup-processing" style="display: none;">
-        </div>
-        <div class="create-person">
-            <form class="form-create-person" style="display: none;">
-                <div class="form-group">
-                    <label for="formGroupID">ID пользователя:</label>
-                    <input type="text" class="form-control" id="formGroupID" placeholder="Введите ID пользователя" title="ID пользователя целое число">
+      <div class="jumbotron mt-3">
+        <h1 class="display-4">Hello, friends!</h1>
+        <p class="lead">This is a test application using vanilla javascript.</p>
+        <hr class="my-4" />
+      </div>
+      <div class="popup-processing" style="display: none;"></div>
+      <div class="create-person">
+        <form class="form-create-person" style="display: none;">
+          <div class="form-group">
+            <label for="formGroupID">ID пользователя:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupID"
+              placeholder="Введите ID пользователя"
+              title="ID пользователя целое число"
+            />
+          </div>
+          <div class="form-group">
+            <label for="formGroupFullName">ФИО пользователя:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupFullName"
+              placeholder="Введите ФИО пользователя"
+              title="Запишите через пробел фамилию и имя пользователя"
+            />
+          </div>
+          <div class="form-group">
+            <label for="formGroupAge">Возраст пользователя:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupAge"
+              placeholder="Введите возраст пользователя"
+              title="Возраст пользователя - число до 100"
+            />
+          </div>
+          <button class="btn btn-success btn-md" type="submit">
+            Сохранить
+          </button>
+        </form>
+        <button class="btn btn-primary btn-create-person mt-3" type="button">
+          Добавить пользователя
+        </button>
+      </div>
+      <div class="edit-person" style="display: none;">
+        <form class="form-edit-person">
+          <div class="form-group">
+            <label for="formGroupID">ID пользователя:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupID"
+              placeholder="Введите ID пользователя"
+              title="ID пользователя целое число"
+            />
+          </div>
+          <div class="form-group">
+            <label for="formGroupFullName">ФИО пользователя:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupFullName"
+              placeholder="Введите ФИО пользователя"
+              title="Запишите через пробел фамилию и имя пользователя"
+            />
+          </div>
+          <div class="form-group">
+            <label for="formGroupAge">Возраст пользователя:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupAge"
+              placeholder="Введите возраст пользователя"
+              title="Возраст пользователя - число до 100"
+            />
+          </div>
+          <button class="btn btn-success btn-md" type="submit">
+            Сохранить
+          </button>
+        </form>
+        <button class="btn btn-cancel btn-danger btn-md mt-3">Отмена</button>
+      </div>
+      <div class="custom-table table-responsive-md mt-5">
+        <table class="table table-bordered table-hover text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th class="w-25">ID <span class="arrow-sort sort-id"></span></th>
+              <th class="w-50">
+                ФИО <span class="arrow-sort sort-surname"></span
+                ><span class="arrow-sort sort-name"></span>
+              </th>
+              <th class="w-25">
+                Возраст <span class="arrow-sort sort-age"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center">
+              <td colspan="4" class="w-100">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
                 </div>
-                <div class="form-group">
-                  <label for="formGroupFullName">ФИО пользователя:</label>
-                  <input type="text" class="form-control" id="formGroupFullName" placeholder="Введите ФИО пользователя" title="Запишите через пробел фамилию и имя пользователя">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupAge">Возраст пользователя:</label>
-                  <input type="text" class="form-control" id="formGroupAge" placeholder="Введите возраст пользователя" title="Возраст пользователя - число до 100">
-                </div>
-                <button class="btn btn-success btn-md" type="submit">Сохранить</button>
-            </form>
-            <button class="btn btn-primary btn-create-person mt-3" type="button">Добавить пользователя</button>
-        </div>
-        <div class="edit-person" style="display: none;">
-            <form class="form-edit-person">
-                <div class="form-group">
-                    <label for="formGroupID">ID пользователя:</label>
-                    <input type="text" class="form-control" id="formGroupID" placeholder="Введите ID пользователя" title="ID пользователя целое число">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupFullName">ФИО пользователя:</label>
-                  <input type="text" class="form-control" id="formGroupFullName" placeholder="Введите ФИО пользователя" title="Запишите через пробел фамилию и имя пользователя">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupAge">Возраст пользователя:</label>
-                  <input type="text" class="form-control" id="formGroupAge" placeholder="Введите возраст пользователя" title="Возраст пользователя - число до 100">
-                </div>
-                <button class="btn btn-success btn-md" type="submit">Сохранить</button>
-            </form>
-            <button class="btn btn-cancel btn-danger btn-md mt-3">Отмена</button>
-        </div>
-        <div class="custom-table table-responsive-md mt-5"> 
-            <table class="table table-bordered table-hover text-center">
-                <thead class="thead-dark">
-                  <tr>
-                    <th class="w-25">ID <span class="arrow-sort sort-id"></span></th>
-                    <th class="w-50">ФИО <span class="arrow-sort sort-surname"></span><span class="arrow-sort sort-name"></span></th>
-                    <th class="w-25">Возраст <span class="arrow-sort sort-age"></span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td colspan="4" class="w-100">
-                            <div class="spinner-border" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-</body>
+  </body>
 </html>
