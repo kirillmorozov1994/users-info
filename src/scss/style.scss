@@ -1,0 +1,104 @@
+.thead-dark > tr > th, tbody > tr > td {
+    position: relative;
+}
+
+.custom-table {
+    position: relative;
+}
+
+.popup-processing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba($color: #333, $alpha: .7);
+    & .message-process {
+        font-size: 32px;
+        color: #fff;
+    }
+}
+
+.btn-person {
+    position: absolute;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    &-remove {
+        top: 15%;
+        right: 3%;
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            border-radius: 5px;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &:hover {
+            &::after {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+            &::before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+    }
+    &-edit {
+        top: 15%;
+        right: 15%;
+        background: url('../img/edit.png') no-repeat center / cover;
+    }
+    
+}
+
+tbody > tr > td > .btn-remove-person {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    font-size: 10px;
+}
+
+.thead-dark > tr > th > .arrow-sort {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background: url('../img/arrow_sort.png') no-repeat center;
+    background-size: cover;
+    transition: all .5s;
+}
+
+.thead-dark > tr > th > .arrow-sort.sort-surname {
+    right: 15%;
+}
+
+.thead-dark > tr > th> .arrow-sort:hover {
+    cursor: pointer;
+}
+
+.thead-dark > tr > th> .arrow-sort.active-sort {
+    transform: translateY(-50%) rotate(180deg);
+}

@@ -1,0 +1,17 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": "3.6.5",
+                "modules": false,
+                "targets": [
+                    "last 2 chrome versions",
+                    "last 2 firefox versions"
+                ]
+            }
+        ]
+    ],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
+}
